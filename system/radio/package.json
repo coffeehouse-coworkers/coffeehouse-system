@@ -1,0 +1,9 @@
+{
+	"name": "coffeehouse-radio-api",
+	"version": "0.0.1",
+	"description": "api",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "index.js"
+}
