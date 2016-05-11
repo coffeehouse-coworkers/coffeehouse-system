@@ -1,3 +1,5 @@
+'use strict';
+
 const SC = require('node-soundcloud');
 
 SC.init({
@@ -11,11 +13,17 @@ SC.get('/playlists/47565276', function(err, playlist) {
 		done(err);
 	}
 	else {
+
+		let elapsedTime = 3622471;
+
 		for(let i = 0; i < playlist.tracks.length; i++){
-			if(!playlist.tracks[i].id || !playlist.tracks[i].durration){
-				console.log('found it!');
-				console.log(playlist.tracks[i]);
+			let trackDuration = playlist.tracks[i].duration;
+			if(trackDuration > elapsedTime){
+				console.log(elapsedTime);
+				console.log(playlist.tracks[i].id);
+				break;
 			}
+			elapsedTime = elapsedTime - trackDuration;
 		}
 	}
 });
