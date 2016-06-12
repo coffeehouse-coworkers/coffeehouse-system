@@ -17,7 +17,9 @@
     "good-squeeze": "^3.0.1",
     "hapi": "^13.4.1",
     "inert": "^4.0.0",
-    "node-soundcloud": "0.0.5"
+    "joi": "^8.4.2",
+    "node-soundcloud": "0.0.5",
+    "request": "^2.72.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
