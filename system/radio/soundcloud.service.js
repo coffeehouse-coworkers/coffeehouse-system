@@ -1,7 +1,7 @@
 'use strict';
 
 const SC = require('node-soundcloud');
-const config = require('./config');
+const config = require('../../config');
 
 SC.init({
     id: config.soundcloud.clientId,

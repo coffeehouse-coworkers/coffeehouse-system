@@ -9,11 +9,9 @@ const routes = require('./routes');
  * Plugin Registration
  */
 exports.register = function (server, options, next) {
-
 	let api = server.select('api');
-
-	// load consumer routes
 	api.route(routes);
+	next();
 };
 
 /**

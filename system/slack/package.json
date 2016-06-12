@@ -1,0 +1,9 @@
+{
+	"name": "coffeehouse-slack",
+	"version": "0.0.1",
+	"description": "slack module",
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "index.js"
+}

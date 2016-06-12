@@ -27,16 +27,14 @@ Glue.compose(manifest, options, function (err, server) {
                     handler: function(request, reply){
                         reply(true)
                             .header('access-control-allow-headers', 'accept, authorization, content-type')
-                            .header('access-control-allow-origin', 'www.coffeehousecoworkers.com')
+                            .header('access-control-allow-origin', 'http://www.coffeehousecoworkers.com')
                             .header('access-control-allow-methods', 'GET, PUT, POST, DELETE, OPTIONS');
                     }
                 }
             });
 
             console.log("CoffeeHouse System Started!");
-            console.log("Connections:");
             console.log("  >>>  API: " + server.connections[0].info.address + ":" + server.connections[0].info.port);
-            console.log("  >>>  Webapp: " + server.connections[1].info.address + ":" + server.connections[1].info.port);
         }
     });
 });

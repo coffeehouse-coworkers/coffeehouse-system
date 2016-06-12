@@ -8,15 +8,11 @@ module.exports = {
     },
     connections: [
         {
-            port: 8090,
+            port: 8080,
             labels: ['api'],
             routes: {
                 cors: true
             }
-        },
-        {
-            port: 8080,
-            labels: ['webapp']
         }
     ],
     registrations: [
@@ -27,39 +23,32 @@ module.exports = {
         },
         {
             plugin: {
-                register: "./radio"
+                register: "./slack"
             },
             options: {
                 select: ['api'],
                 routes: {
-                    prefix: "/radio"
+                    prefix: "/slack"
                 }
-            }
-        },
-        {
-            plugin: {
-                register: "./webapp"
-            },
-            options: {
-                select: ['webapp']
             }
         },
         {
             plugin: {
                 register: "good",
                 options: {
-                    requestHeaders: true,
-                    reporters: [
-                        {
-                            // reports to console which is used by PM2 logs
-                            reporter: require("good-console"),
-                            events: { 
+                    reporters: {
+                        console: [{
+                            module: "good-squeeze",
+                            name: "Squeeze",
+                            args: [{
                                 response: "*",
                                 log: "*", 
                                 error: "*" 
-                            }
-                        }
-                    ]
+                            }]
+                        },{
+                            module: "good-console"
+                        }, 'stdout']
+                    }
                 }
             }
         }
