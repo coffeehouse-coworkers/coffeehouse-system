@@ -20,7 +20,7 @@ exports.getUserCount = function(request, reply){
 };
 
 /**
- * Invites user to join slack team
+ * Sends invitation to join slack team
  */
 exports.invite = function(request, reply){
 	let email = request.payload.email;
