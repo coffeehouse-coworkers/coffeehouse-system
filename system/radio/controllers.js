@@ -13,7 +13,7 @@ exports.initRadio = function(done){
 			done(err);
 		}
 		else {
-			// console.log('Initializing with playlist', playlist);
+			console.log('Initializing with playlist', playlist);
 			radioState.playlist = playlist;
 			radioState.startTime = new Date();
 			done();
@@ -32,7 +32,6 @@ exports.getLiveInfo = function(request, reply){
 	let trackId = null;
 
 	for(let i = 0; i < radioState.playlist.tracks.length; i++){
-
 		let trackDuration = radioState.playlist.tracks[i].duration;
 		if(trackDuration > elapsedTime){
 			seekTime = elapsedTime;

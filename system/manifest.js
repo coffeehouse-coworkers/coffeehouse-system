@@ -52,7 +52,7 @@ module.exports = {
                     reporters: [
                         {
                             // reports to console which is used by PM2 logs
-                            reporter: "good-console",
+                            reporter: require("good-console"),
                             events: { 
                                 response: "*",
                                 log: "*", 
