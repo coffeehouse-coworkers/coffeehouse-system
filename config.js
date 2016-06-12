@@ -5,6 +5,6 @@ module.exports = {
 		redirectUri: "http://www.coffeehousecoworkers.com/redirect"
 	},
 	slack: {
-		apiKey: process.env.SLACK_API_KEY || 'API_KEY_FOR_SLACK'
+		apiToken: process.env.SLACK_API_TOKEN || 'API_TOKEN_FOR_SLACK'
 	}
 }

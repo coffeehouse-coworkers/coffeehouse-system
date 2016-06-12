@@ -5,9 +5,9 @@ const slackCtrl = require('./controllers.js');
 module.exports = [
 	{
         method: 'GET',
-        path: '/info',
+        path: '/users',
         config: {
-            handler: slackCtrl.getInfo
+            handler: slackCtrl.getUserCount
         }
 	}
 ]
