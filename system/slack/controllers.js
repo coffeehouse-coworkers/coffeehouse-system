@@ -14,7 +14,13 @@ exports.getUserCount = function(request, reply){
 	  		reply(err);
 	  	} 
 	  	else {
-	    	reply(response.members.length);
+	  		console.log(response);
+	  		if(response.members){
+	  			reply(response.members.length);
+	  		}
+	  		else {
+	  			reply('no');
+	  		}
 	  	}
 	});
 };
