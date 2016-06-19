@@ -4,6 +4,7 @@ const SlackWebClient = require('@slack/client').WebClient;
 const slackApiToken = require('../../config').slack.apiToken;
 const slackWebApi = new SlackWebClient(slackApiToken);
 const httpClient = require('request');
+const Boom = require('boom');
 
 /**
  * Returns Slack user count
@@ -14,9 +15,15 @@ exports.getUserCount = function(request, reply){
 	  		reply(err);
 	  	} 
 	  	else {
+	  		if(response.error){
+	  			reply(Boom.badImplementation(response.error));
+	  		}
+	  		else if(response.members){
+	  			reply(response.members.length);
+	  		}
 	  		console.log(response);
 	  		if(response.members){
-	  			reply(response.members.length);
+	  			
 	  		}
 	  		else {
 	  			reply('no');
