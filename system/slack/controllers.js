@@ -21,12 +21,8 @@ exports.getUserCount = function(request, reply){
 	  		else if(response.members){
 	  			reply(response.members.length);
 	  		}
-	  		console.log(response);
-	  		if(response.members){
-	  			
-	  		}
 	  		else {
-	  			reply('no');
+	  			reply(Boom.badImplementation('Unexpected dataformat from Slack'));
 	  		}
 	  	}
 	});
